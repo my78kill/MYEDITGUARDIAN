@@ -1,6 +1,6 @@
 
 {
-  "name": "Telegram Edit Guardian Bot",
+  "name": "Telegram AnonXHelper Bot",
   "description": "Telegram bot to delete edited messages and maintain group transparency.",
   "repository": "https://github.com/Aashik-team/EDITGUARDIAN",
   "keywords": ["telegram", "bot", "python"],
