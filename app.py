@@ -1,6 +1,5 @@
 from flask import Flask
 import threading
-import asyncio
 import Aashik_Edit.main as bot
 
 app_flask = Flask(__name__)
@@ -10,12 +9,12 @@ def home():
     return "Bot is running 😈"
 
 def run_bot():
-    loop = asyncio.new_event_loop()   # 👈 create loop
-    asyncio.set_event_loop(loop)      # 👈 set loop
-    bot.app.run()                     # 👈 run pyrogram
+    print("Bot starting...")
+    bot.app.start()   # ❗ NO .run()
+    print("Bot started")
 
-# start bot thread
-threading.Thread(target=run_bot).start()
+# start bot in background
+threading.Thread(target=run_bot, daemon=True).start()
 
 if __name__ == "__main__":
     import os
