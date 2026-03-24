@@ -441,13 +441,7 @@ def main():
     dispatcher.add_handler(CommandHandler("stats", send_stats))
     dispatcher.add_handler(CommandHandler("help", help))
 
-    # Start the Bot
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
-    # Start the bot
+    
 
 
 
