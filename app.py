@@ -1,4 +1,5 @@
 from flask import Flask
+from Aashik_Edit import bot
 import threading
 import bot  # your bot.py file
 
