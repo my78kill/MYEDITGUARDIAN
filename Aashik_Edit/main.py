@@ -17,7 +17,6 @@ from config import LOGGER, MONGO_URI, DB_NAME, TELEGRAM_TOKEN, OWNER_ID, SUDO_ID
 
 app = Client("AutoDelete", bot_token=TELEGRAM_TOKEN, api_id=API_ID, api_hash=API_HASH)
 print("INFO: Starting Autodelete")
-app.start()
 bot = app
 # Initialize your Pyrogram Client your bot's ID
 # Define the text variables
