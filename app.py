@@ -1,7 +1,6 @@
 from flask import Flask
-import Aashik_Edit.main as bot
 import threading
-import bot  # your bot.py file
+import Aashik_Edit.main as bot   # 👈 correct import
 
 app = Flask(__name__)
 
@@ -12,7 +11,6 @@ def home():
 def run_bot():
     bot.bot.infinity_polling()
 
-# start bot in background
 threading.Thread(target=run_bot).start()
 
 if __name__ == "__main__":
