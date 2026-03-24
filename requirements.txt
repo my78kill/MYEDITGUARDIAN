@@ -7,3 +7,4 @@ pyrogram==2.0.106
 urllib3==1.26.16
 TgCrypto
 python-telegram-bot==13.15
+flask
