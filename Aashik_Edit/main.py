@@ -4,6 +4,7 @@ import re
 import asyncio
 import time
 from random import choice
+from Aashik_Edit.main import app
 from Aashik_Edit.Edit import *
 from telegram import Update, Bot
 from pyrogram import Client, filters
@@ -440,9 +441,6 @@ def main():
     dispatcher.add_handler(CommandHandler("stats", send_stats))
     dispatcher.add_handler(CommandHandler("help", help))
 
+    print("Bot starting...")
+app.run()
     
-
-
-
-
-      
