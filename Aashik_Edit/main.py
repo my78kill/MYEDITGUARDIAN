@@ -470,5 +470,4 @@ def main():
 
     print("Bot starting...")
 
-updater.start_polling()
-updater.idle() 
+app.run()
