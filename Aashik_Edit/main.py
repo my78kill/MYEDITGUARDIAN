@@ -4,7 +4,6 @@ import re
 import asyncio
 import time
 from random import choice
-from Aashik_Edit.main import app
 from Aashik_Edit.Edit import *
 from telegram import Update, Bot
 from pyrogram import Client, filters
