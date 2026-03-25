@@ -469,5 +469,6 @@ def main():
     dispatcher.add_handler(CommandHandler("help", help))
 
     print("Bot starting...")
-app.run()
-    
+
+updater.start_polling()
+updater.idle() 
