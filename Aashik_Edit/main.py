@@ -1,25 +1,53 @@
-import html
 import logging
+import html
 import re
 import asyncio
 import time
 from random import choice
-from Aashik_Edit.Edit import *
-from telegram import Update, Bot
+
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from telegram.utils.helpers import escape_markdown, mention_html
-from telegram.utils.helpers import mention_markdown
-from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
-from pymongo import MongoClient
-from config import LOGGER, MONGO_URI, DB_NAME, TELEGRAM_TOKEN, OWNER_ID, SUDO_ID, BOT_NAME, SUPPORT_ID, API_ID, API_HASH
 
-app = Client("AutoDelete", bot_token=TELEGRAM_TOKEN, api_id=API_ID, api_hash=API_HASH)
-print("INFO: Starting Autodelete")
+from pymongo import MongoClient
+
+from config import (
+    LOGGER, MONGO_URI, DB_NAME,
+    TELEGRAM_TOKEN, OWNER_ID, SUDO_ID,
+    BOT_NAME, SUPPORT_ID, API_ID, API_HASH
+)
+
+from Aashik_Edit.Edit import *
+
+# =========================
+# BOT CLIENT
+# =========================
+
+app = Client(
+    "AutoDelete",
+    bot_token=TELEGRAM_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH
+)
+
 bot = app
-# Initialize your Pyrogram Client your bot's ID
-# Define the text variables
+
+print("INFO: Starting Autodelete")
+
+# =========================
+# LOGGING
+# =========================
+
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO
+)
+
+logger = logging.getLogger(__name__)
+
+# =========================
+# TEXT VARIABLES
+# =========================
+
 texts = {
     "sudo_5": "Current Sudo Users:\n",
     "sudo_6": "Other Sudo Users:\n",
